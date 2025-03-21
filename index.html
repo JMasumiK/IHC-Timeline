@@ -5,6 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linha do Tempo da Steam</title>
     <style>
+         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #1b2838;
+            color: #c6d4df;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                            url('steam_background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body.dark-mode {
+            background-color: #000;
+            background-image: none;
+        }
+
+        .gabe-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #66c0f4;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #66c0f4;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #66c0f4;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 20px;
+            background: rgba(26, 32, 38, 0.9);
+            border-radius: 10px;
+        }
+
+        .timeline-year a {
+            color: #66c0f4;
+            text-decoration: none;
+        }
+
+        .timeline-year a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #66c0f4;
+        }
+
+        .footer a {
+            color: #66c0f4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -34,16 +121,19 @@
         .timeline {
             position: relative;
             padding: 40px 0;
+            overflow: hidden;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
             left: 50%;
+            transform: translateX(-50%); 
             width: 4px;
-            height: 100%;
+            height: calc(100% - 80px); 
             background: #66c0f4;
-        }
+            top: 40px; 
+}
 
         .timeline-item {
             display: flex;
@@ -59,7 +149,7 @@
             flex: 1;
             padding: 20px;
             text-align: center;
-            font-size: 3.0rem;
+            font-size: 1.5rem;
             color: #66c0f4;
         }
 
@@ -97,7 +187,10 @@
 
         @media (max-width: 768px) {
             .timeline::before {
-                left: 20px;
+                left: 40px; 
+                transform: none; 
+                height: calc(100% - 40px);
+                top: 20px;
             }
 
             .timeline-item {
@@ -121,15 +214,25 @@
     </style>
 </head>
 <body>
+    <!-- Botao para o Gif do GABE!!!-->
+    <a href="gabe.gif" class="gabe-button" target="_blank">
+        <img src="gabe.gif" alt="Gabe Newell" style="width: 100%; height: 100%; object-fit: cover;">
+    </a>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Modo Noturno</button>
+
+    <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
     <div class="timeline-container">
         <h1 class="timeline-title">História da Steam</h1>
-            <img src="padre_nuestro.png" alt="Padre Gabe" style="display: block; margin: 0 auto;">
+        <img src="padre_nuestro.png" alt="Padre Gabe" style="display: block; margin: 0 auto;">
         
         <div class="timeline">
             
             <!-- 2003 -->
             <div class="timeline-item">
-                <div class="timeline-year">2003</div>
+                <div class="timeline-year"><a href="https://pt.wikipedia.org/wiki/Steam" target="_blank">2003</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Lançamento da Steam</h3>
                     <p><strong>Descrição:</strong> Plataforma de atualização automática para jogos da Valve.</p>
@@ -143,7 +246,8 @@
 
             <!-- 2005 -->
             <div class="timeline-item">
-                <div class="timeline-year">2005</div>
+                <div class="timeline-year"><a href="https://store.steampowered.com/?l=portuguese" target="_blank">2005</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Loja Steam</h3>
                     <p><strong>Descrição:</strong> Primeira loja digital integrada com jogos de terceiros.</p>
@@ -157,7 +261,8 @@
 
             <!-- 2007 -->
             <div class="timeline-item">
-                <div class="timeline-year">2007</div>
+                <div class="timeline-year"><a href="https://steamcommunity.com/" target="_blank">2007</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Recursos de Comunidade</h3>
                     <p><strong>Descrição:</strong> Perfil de usuário, lista de amigos e grupos.</p>
@@ -171,7 +276,8 @@
 
             <!-- 2008 -->
             <div class="timeline-item">
-                <div class="timeline-year">2008</div>
+                <div class="timeline-year"><a href="https://partner.steamgames.com/doc/sdk" target="_blank">2008</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Steamworks SDK</h3>
                     <p><strong>Descrição:</strong> Ferramentas para desenvolvedores integrarem DRM e conquistas.</p>
@@ -185,7 +291,8 @@
 
             <!-- 2011 -->
             <div class="timeline-item">
-                <div class="timeline-year">2011</div>
+                <div class="timeline-year"><a href="https://steamcommunity.com/workshop/?l=portuguese" target="_blank">2011</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Steam Workshop</h3>
                     <p><strong>Descrição:</strong> Plataforma para compartilhamento de mods.</p>
@@ -199,7 +306,8 @@
 
             <!-- 2012 -->
             <div class="timeline-item">
-                <div class="timeline-year">2012</div>
+                <div class="timeline-year"><a href="https://store.steampowered.com/bigpicture" target="_blank">2012</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Modo Big Picture</h3>
                     <p><strong>Descrição:</strong> Interface otimizada para TVs e controles.</p>
@@ -213,7 +321,8 @@
 
             <!-- 2013 -->
             <div class="timeline-item">
-                <div class="timeline-year">2013</div>
+                <div class="timeline-year"><a href="https://store.steampowered.com/steamos" target="_blank">2013</a>
+                </div>
                 <div class="timeline-content">
                     <h3>SteamOS e Steam Machines</h3>
                     <p><strong>Descrição:</strong> Sistema operacional e hardware para TV.</p>
@@ -228,7 +337,8 @@
 
             <!-- 2015 -->
             <div class="timeline-item">
-                <div class="timeline-year">2015</div>
+                <div class="timeline-year"><a href="https://store.steampowered.com/app/250820/SteamVR/" target="_blank">2015</a>
+                </div>
                 <div class="timeline-content">
                     <h3>SteamVR e HTC Vive</h3>
                     <p><strong>Descrição:</strong> Kit de realidade virtual com HTC.</p>
@@ -242,7 +352,8 @@
 
             <!-- 2017 -->
             <div class="timeline-item">
-                <div class="timeline-year">2017</div>
+                <div class="timeline-year"><a href="https://store.steampowered.com/sub/163632?l=portuguese" target="_blank">2017</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Steam Direct</h3>
                     <p><strong>Descrição:</strong> Publicação direta de jogos independentes.</p>
@@ -256,7 +367,8 @@
 
             <!-- 2019 -->
             <div class="timeline-item">
-                <div class="timeline-year">2019</div>
+                <div class="timeline-year"><a href="https://www.pcgamesn.com/steam/steam-library-redesign" target="_blank">2019</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Redesign da Biblioteca</h3>
                     <p><strong>Descrição:</strong> Nova interface com categorias dinâmicas.</p>
@@ -271,7 +383,8 @@
 
             <!-- 2022 -->
             <div class="timeline-item">
-                <div class="timeline-year">2022</div>
+                <div class="timeline-year"><a href="https://store.steampowered.com/steamdeck" target="_blank">2022</a>
+                </div>
                 <div class="timeline-content">
                     <h3>Steam Deck</h3>
                     <p><strong>Descrição:</strong> Console portátil com acesso à biblioteca.</p>
@@ -285,5 +398,42 @@
 
         </div>
     </div>
+    <div class="footer">
+            <p>Creative Commons 
+                <a href="https://steamcommunity.com/profiles/76561198106945440/" target="_blank">Júlio Masumi Kondo</a>, 
+                <a href="https://steamcommunity.com/profiles/76561198249970582/" target="_blank">Klaus Müller Marques</a>, 
+                <a href="https://steamcommunity.com/id/rLeafh/" target="_blank">Rafael Neris Carvalho</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.querySelector('.scroll-top').style.display = 'block';
+            } else {
+                document.querySelector('.scroll-top').style.display = 'none';
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if(!confirm('Você está sendo redirecionado para um site externo. Continuar?')) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
