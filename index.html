@@ -427,13 +427,6 @@
             document.body.classList.toggle('dark-mode');
         }
 
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if(!confirm('Você está sendo redirecionado para um site externo. Continuar?')) {
-                    e.preventDefault();
-                }
-            });
-        });
     </script>
 </body>
 </html>
