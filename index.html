@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linha do Tempo da Steam</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #1b2838;
+            color: #c6d4df;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 20px;
+        }
+
+        .timeline-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #66c0f4;
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #66c0f4;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-year {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            font-size: 3.0rem;
+            color: #66c0f4;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 20px;
+            background: #2a475e;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .timeline-content h3 {
+            color: #66c0f4;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-visual {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .timeline-visual img {
+            width: 400px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .visual-placeholder {
+            width: 400px;
+            height: 250px;
+            background: #3d5568;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                margin-left: 40px;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .timeline-year {
+                text-align: left;
+                padding-left: 0;
+            }
+
+            .timeline-visual img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline-container">
+        <h1 class="timeline-title">História da Steam</h1>
+            <img src="padre_nuestro.png" alt="Padre Gabe" style="display: block; margin: 0 auto;">
+        
+        <div class="timeline">
+            
+            <!-- 2003 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2003</div>
+                <div class="timeline-content">
+                    <h3>Lançamento da Steam</h3>
+                    <p><strong>Descrição:</strong> Plataforma de atualização automática para jogos da Valve.</p>
+                    <p><strong>Design:</strong> Interface minimalista focada em funcionalidade.</p>
+                    <p><strong>Impacto HCI:</strong> Introduziu distribuição digital e atualizações automáticas.</p>
+                    <div class="timeline-visual">
+                        <img src="Logo_Steam.png" alt="1° Logo da Steam">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2005 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2005</div>
+                <div class="timeline-content">
+                    <h3>Loja Steam</h3>
+                    <p><strong>Descrição:</strong> Primeira loja digital integrada com jogos de terceiros.</p>
+                    <p><strong>Design:</strong> Navegação por categorias e carrinho de compras.</p>
+                    <p><strong>Impacto HCI:</strong> Popularizou acesso instantâneo a jogos digitais.</p>
+                    <div class="timeline-visual">
+                        <img src="Logo_Loja_Steam.png" alt="Logo da loja Steam">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2007 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2007</div>
+                <div class="timeline-content">
+                    <h3>Recursos de Comunidade</h3>
+                    <p><strong>Descrição:</strong> Perfil de usuário, lista de amigos e grupos.</p>
+                    <p><strong>Design:</strong> Integração de redes sociais na plataforma.</p>
+                    <p><strong>Impacto HCI:</strong> Facilitou comunicação entre jogadores.</p>
+                    <div class="timeline-visual">
+                        <img src="Community.png" alt="Steam Community">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2008 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2008</div>
+                <div class="timeline-content">
+                    <h3>Steamworks SDK</h3>
+                    <p><strong>Descrição:</strong> Ferramentas para desenvolvedores integrarem DRM e conquistas.</p>
+                    <p><strong>Design:</strong> Padronização de recursos para jogos.</p>
+                    <p><strong>Impacto HCI:</strong> Ampliou biblioteca de jogos e experiências.</p>
+                    <div class="timeline-visual">
+                        <img src="Steamworks.png" alt="Steamworks">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2011 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2011</div>
+                <div class="timeline-content">
+                    <h3>Steam Workshop</h3>
+                    <p><strong>Descrição:</strong> Plataforma para compartilhamento de mods.</p>
+                    <p><strong>Design:</strong> Interface de curadoria para conteúdo customizado.</p>
+                    <p><strong>Impacto HCI:</strong> Empoderou jogadores a customizar experiências.</p>
+                    <div class="timeline-visual">
+                        <img src="Workshop.png" alt="Steam Workshop">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2012 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2012</div>
+                <div class="timeline-content">
+                    <h3>Modo Big Picture</h3>
+                    <p><strong>Descrição:</strong> Interface otimizada para TVs e controles.</p>
+                    <p><strong>Design:</strong> Adaptado para uso em living rooms.</p>
+                    <p><strong>Impacto HCI:</strong> Expandiu acesso além do PC.</p>
+                    <div class="timeline-visual">
+                        <img src="Big_Picture.png" alt="Modo Big Picture">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2013 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2013</div>
+                <div class="timeline-content">
+                    <h3>SteamOS e Steam Machines</h3>
+                    <p><strong>Descrição:</strong> Sistema operacional e hardware para TV.</p>
+                    <p><strong>Design:</strong> Foco em interoperabilidade entre dispositivos.</p>
+                    <p><strong>Impacto HCI:</strong> Tentativa de unificar PC e consoles.</p>
+                    <div class="timeline-visual">
+                        <img src="SteamOS.png" alt="SteamOS">
+                        <img src="Machines.png" alt="Steam Machines">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2015 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2015</div>
+                <div class="timeline-content">
+                    <h3>SteamVR e HTC Vive</h3>
+                    <p><strong>Descrição:</strong> Kit de realidade virtual com HTC.</p>
+                    <p><strong>Design:</strong> Interface imersiva para VR.</p>
+                    <p><strong>Impacto HCI:</strong> Popularizou VR de alta qualidade.</p>
+                    <div class="timeline-visual">
+                        <img src="SteamVR.png" alt="Steam VR">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2017 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2017</div>
+                <div class="timeline-content">
+                    <h3>Steam Direct</h3>
+                    <p><strong>Descrição:</strong> Publicação direta de jogos independentes.</p>
+                    <p><strong>Design:</strong> Redução de barreiras para desenvolvedores.</p>
+                    <p><strong>Impacto HCI:</strong> Explosão de jogos indies.</p>
+                    <div class="timeline-visual">
+                        <img src="Direct.png" alt="Steam Direct">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2019 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2019</div>
+                <div class="timeline-content">
+                    <h3>Redesign da Biblioteca</h3>
+                    <p><strong>Descrição:</strong> Nova interface com categorias dinâmicas.</p>
+                    <p><strong>Design:</strong> Foco em usabilidade e descoberta de jogos.</p>
+                    <p><strong>Impacto HCI:</strong> Navegação mais intuitiva.</p>
+                    <div class="timeline-visual">
+                        <img src="OldUI.png" alt="Antiga UI da biblioteca Steam">
+                        <img src="NewUI.png" alt="Nova UI da biblioteca Steam">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-content">
+                    <h3>Steam Deck</h3>
+                    <p><strong>Descrição:</strong> Console portátil com acesso à biblioteca.</p>
+                    <p><strong>Design:</strong> Interface adaptada para telas menores.</p>
+                    <p><strong>Impacto HCI:</strong> Jogos de PC em dispositivos portáteis.</p>
+                    <div class="timeline-visual">
+                        <img src="Steam_Deck.png" alt="Steam Deck">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
