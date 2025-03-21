@@ -195,12 +195,59 @@
                 width: 100%;
             }
         }
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    #caption {
+        text-align: center;
+        color: #ccc;
+        padding: 10px;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
     </style>
 </head>
 <body>
-    <a href="gabe.gif" class="gabe-button">
+    <a href="javascript:void(0)" class="gabe-button" id="gabeButton">
         <img src="gabe.gif" alt="Gabe Newell" style="width: 100%; height: 100%; object-fit: cover;">
     </a>
+    <div id="gifModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalGif" src="" alt="Gabe Newell">
+        <div id="caption"></div>
+    </div>
 
     <button class="dark-mode-toggle" onclick="toggleDarkMode()">Modo Noturno</button>
 
@@ -390,6 +437,27 @@
     </div>
 
     <script>
+        // Get the modal and the button
+    var modal = document.getElementById("gifModal");
+    var modalGif = document.getElementById("modalGif");
+    var gabeButton = document.getElementById("gabeButton");
+    var closeModal = document.getElementById("closeModal");
+
+    // When the user clicks on the GIF, open the modal
+    gabeButton.onclick = function() {
+        modal.style.display = "block";
+        modalGif.src = "gabe.gif"; // Set the GIF in the modal
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    closeModal.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
         window.onscroll = function() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 document.querySelector('.scroll-top').style.display = 'block';
@@ -416,6 +484,7 @@
                 }
             });
         });
+
     </script>
 </body>
 </html>
