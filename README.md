@@ -88,43 +88,47 @@ Recomenda-se estudos futuros sobre:
 - Impactos cognitivos das interfaces imersivas
 - Modelos sustentáveis de curadoria em ecossistemas abertos
 
-## Referências Bibliográficas
+Aqui está a compilação dos links de referência presentes no projeto, organizados por ano/evento:
 
-2003 - Lançamento da Steam
-🔗 Wikipedia - Steam
+### Links de Referência
 
-2005 - Loja Steam
-🔗 Store Steam
+2003 - Lançamento da Steam**  
+🔗 [Wikipedia - Steam](https://pt.wikipedia.org/wiki/Steam)  
 
-2007 - Recursos de Comunidade
-🔗 Steam Community
+2005 - Loja Steam**  
+🔗 [Store Steam](https://store.steampowered.com/?l=portuguese)  
 
-2008 - Steamworks SDK
-🔗 Steamworks Documentation
+2007 - Recursos de Comunidade**  
+🔗 [Steam Community](https://steamcommunity.com/)  
 
-2011 - Steam Workshop
-🔗 Steam Workshop
+2008 - Steamworks SDK**  
+🔗 [Steamworks Documentation](https://partner.steamgames.com/doc/sdk)  
 
-2011 - Steam Guard
-🔗 Steam Guard FAQ
+2011 - Steam Workshop**  
+🔗 [Steam Workshop](https://steamcommunity.com/workshop/?l=portuguese)  
 
-2012 - Modo Big Picture
-🔗 Big Picture Mode
+2011 - Steam Guard**  
+🔗 [Steam Guard FAQ](https://support.steampowered.com/kb_article.php?ref=8625-WRAH-9030)  
 
-2013 - SteamOS e Steam Machines
-🔗 SteamOS
+2012 - Modo Big Picture**  
+🔗 [Big Picture Mode](https://store.steampowered.com/bigpicture)  
 
-2015 - SteamVR e HTC Vive
-🔗 SteamVR
+2013 - SteamOS e Steam Machines**  
+🔗 [SteamOS](https://store.steampowered.com/steamos)  
 
-2017 - Steam Direct
-🔗 Steam Direct
+2015 - SteamVR e HTC Vive**  
+🔗 [SteamVR](https://store.steampowered.com/app/250820/SteamVR/)  
 
-2019 - Redesign da Biblioteca
-🔗 Steam Library Redesign
+2017 - Steam Direct**  
+🔗 [Steam Direct](https://store.steampowered.com/sub/163632?l=portuguese)  
 
-2022 - Steam Deck
-🔗 Steam Deck
+2019 - Redesign da Biblioteca**  
+🔗 [Steam Library Redesign](https://www.pcgamesn.com/steam/steam-library-redesign)  
+
+2022 - Steam Deck**  
+🔗 [Steam Deck](https://store.steampowered.com/steamdeck)  
+
+
 
 ## Apêndice: Detalhes Técnicos do Projeto
 
